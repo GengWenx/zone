@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>gengwenx.github.io/zone</title>
+	<meta name="keywords" content="耿文相,Gengwenx,CSS,HTML,Javascript,PHP,ThinkPHP">
+	<meta name="description" content="耿文相,Gengwenx,CSS,HTML,Javascript,PHP,ThinkPHP">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<link rel="stylesheet" type="text/css" href="../css/sui.css">
+	<link rel="stylesheet" type="text/css" href="../css/comm.css">
+	<link rel="stylesheet" type="text/css" href="../css/media.css">
+
+	<script type="text/javascript" src="../js/jquery.min.js"></script>
+	<script type="text/javascript" src="../js/app.js"></script>
+</head>
+<body>
+
+	<header class="header-view">
+		<a href="javascript:history.back()" class="header-full-left">
+			<span class="sui-icon sui-icon-e19"></span>
+		</a>
+		<h2 class="header-name">
+			<img class="icon" src="../images/logo.png" alt="Gengwenx"> CSS layout
+		</h2>
+	</header>	
+
+
+	<section class="container-main w980">
+		<div class="container">
+			<section>
+				<h3>CSS 布局总结</h3>
+				<p>所谓的布局，就是页面的排列、有纵排、还有横排，更有纵横交错。CSS布局直接说其实就包含两个含义：尺寸与定位。也就是说，所有与尺寸和定位相关的属性，都可以用来布局。</p>
+
+				<p>大体上，布局中会用到的有：尺寸相关的盒子模型，普通流、浮动、绝对定位三种定位机制，CSS3中的transform、弹性盒子模块、inline-block布局，弹性盒布局这几个名词。</p>
+			</section>
+
+			<section>
+				<h3>inline-block</h3>
+				<p>CSS元素分为块级（水杯，有宽高）和行内（水，没有宽高）。块级是纵排的，行内元素是横排的，在利用嵌套就可以实现很多的布局，display:inline|block|inline-block;可以使元素在块级和行内之间转换，或者兼存。</p>
+
+				<p>使用inline-block之前先处理点小障碍：inline-block元素会有4px左右的空隙，这个是因为我们写代码时候的换行符所致。</p>
+
+				<p>解决办法很简单：在inline-block的父元素中设置样式font-size：0；letter-spacing: -4px; 然后设置inline-block的所有兄弟元素 font-size：值；letter-spacing: 值px;  恢复正常的显示。</p>
+
+				<p>另外还有一点需要注意的是inline-block默认是基线对齐的，而inline-block的基线又跟文本基线一致，所以在内容不同的时候并不能水平对齐。只需要用vertical-align显式声明一下top/bottom/middle对齐即可</p>
+			</section>
+
+			<section>
+				<h3>浮动布局</h3>
+				<p><span class="bothred">目前PC网站大多使用float布局浮动布局的核心就是让元素脱离普通流，然后使用width/height，margin/padding将元素定位</span>脱离普通流的元素，就像脱离地心引力一样，与普通流不在一个高度上。这个跟图层的概念类似。高度不同所以可以叠在其他元素上面产生重叠或者使用负边距跑到父元素外，理解了这一点浮动布局就很好理解了。</p>
+
+				<p>使用浮动来进行布局，一个比较大的问题是清除浮动。这个可以使用一个after伪类来清除。更大的问题是浮动性像水一样向上流动，难以把握。在元素较多而且元素高度尺寸不一的情况下，单纯使用浮动只能实现上端对齐，这对于适应多种设备的布局就显得力不从心了。目前的做法是牺牲一部分内容，将元素做成等高排列，从美观上看也当然也是极好的，比参差不齐的排列要美观。</p>
+			</section>
+					
+			<section>
+				<h3>定位布局</h3>
+				<p>position:relative|absolute|fixed</p>
+			</section>
+
+			<section>
+				<h3>弹性布局</h3>
+				<p>display:flex</p>
+			</section>	
+		</div>
+	</section>
+
+	<div class="backtop" id="backtop">
+		<span class="sui-icon sui-icon-e16"></span>
+	</div>
+
+	<div class="end">Copyright &copy; 2017 - 2020</div>
+</body>
+</html>
